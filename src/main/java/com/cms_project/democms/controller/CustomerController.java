@@ -12,6 +12,11 @@ public class CustomerController {
     @Autowired
     CustomerService service;
 
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
+
     @GetMapping("/customers")
     public String list(Model model) {
         model.addAttribute("customers", service.findAll());
